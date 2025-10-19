@@ -1,39 +1,46 @@
+#===================================================
+# STM32F407 + Keil MDK + CubeMX + MATLAB/Simulink
+# 通用 .gitignore 模板
+#===================================================
+
 #---------------------------------------------------
-# 1. MDK-Keil Compiler Build Output (Output Files)
-# These are generated during the build process
+# 1. Keil MDK Build Output (自动生成文件)
 #---------------------------------------------------
-*.axf         # Executable/Debug file
-*.htm         # Build log/error/info
-*.lnp         # Linker control file
-*.lst         # Listing files
-*.map         # Memory map file
-*.o           # Object files (intermediate)
-*.sct         # Scatter file (linker script)
-*.tra         # Target setting file
-*.d           # Dependency files
-*.crf         # Cross-reference file
+*.axf
+*.htm
+*.lnp
+*.lst
+*.map
+*.o
+*.sct
+*.tra
+*.d
+*.crf
 *.build_log.htm
 *.dep
 *.iex
 
 #---------------------------------------------------
-# 2. MDK-Keil Project Configuration & User Settings
-# These store user preferences, window layouts, etc.
+# 2. Keil 工程临时/个性化配置文件
 #---------------------------------------------------
-*.uvoptx      # Project options file
-*.uvgui* # GUI layout file (old format)
-*.uvguix.* # GUI layout file (new format)
-*.bak         # Generic backup files (may include Keil/CubeMX)
+*.uvoptx
+*.uvgui*
+*.uvguix.*
+*.bak
+*.rtebuild
+*.scvd
+*.cprj
+*.ini
 
 #---------------------------------------------------
-# 3. STM32CubeMX Specific
+# 3. STM32CubeMX 文件
 #---------------------------------------------------
-*.ioc-backup* # CubeMX project backup files
-# Note: CubeMX project file (.ioc) itself should generally NOT be ignored.
+*.ioc-backup*
+# 保留 .ioc 文件（CubeMX 工程配置）
+# 不忽略 .ioc，因为它定义了外设与引脚
 
 #---------------------------------------------------
-# 4. Common Build Output Directories
-# These directories contain all generated output files
+# 4. 常见编译输出目录
 #---------------------------------------------------
 /Objects/
 /Listings/
@@ -41,9 +48,140 @@
 /build/
 /Debug/
 /Release/
+/temp/
+/tmp/
+/bin/
+/generated/
 
 #---------------------------------------------------
-# 5. IDE/Editor Specific Files (VSCode/Generic)
+# 5. MATLAB / Simulink 自动生成内容
 #---------------------------------------------------
-.vscode/            # VSCode settings folder
-*.code-workspace    # VSCode workspace file
+# Simulink 构建目录
+slprj/
+sccprj/
+codegen/
+cache/
+work/
+mex/
+*_ert_rtw/
+*_grt_rtw/
+*_rti1006_rtw/
+*_rtw/
+
+# 临时与缓存文件
+*.asv
+*.autosave
+*.slxc
+*.slprj
+*.sfprj
+*.slxp
+*.mexa64
+*.mexw64
+*.mexmaci64
+*.mex*
+*.tlc
+*.tmf
+*.mk
+*.bat
+*.tlh
+*.xml
+*.csv
+*.log
+*.info
+*.mat
+*.txt
+*.mdl.r*
+
+# MATLAB 项目/工具箱缓存
+.matlab/
+.mltbx/
+*.prj
+*.autosave
+*.mdl.autosave
+*.m~
+*.bak
+
+#---------------------------------------------------
+# 6. VSCode / 编辑器 / IDE 配置
+#---------------------------------------------------
+.vscode/
+*.code-workspace
+.idea/
+*.suo
+*.user
+*.userossc
+*.ncb
+*.sdf
+*.opendb
+*.VC.db
+*.VC.opendb
+
+#---------------------------------------------------
+# 7. 系统与其他临时文件
+#---------------------------------------------------
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+*.swo
+*.lnk
+*.orig
+
+#---------------------------------------------------
+# 8. 本地工具配置（根据需要修改）
+#---------------------------------------------------
+# MATLAB 或 Keil 环境配置脚本可保留
+# Scripts/setup_env.bat
+# Scripts/setup_matlab_path.m
+
+
+
+# #---------------------------------------------------
+# # 1. MDK-Keil Compiler Build Output (Output Files)
+# # These are generated during the build process
+# #---------------------------------------------------
+# *.axf         # Executable/Debug file
+# *.htm         # Build log/error/info
+# *.lnp         # Linker control file
+# *.lst         # Listing files
+# *.map         # Memory map file
+# *.o           # Object files (intermediate)
+# *.sct         # Scatter file (linker script)
+# *.tra         # Target setting file
+# *.d           # Dependency files
+# *.crf         # Cross-reference file
+# *.build_log.htm
+# *.dep
+# *.iex
+
+# #---------------------------------------------------
+# # 2. MDK-Keil Project Configuration & User Settings
+# # These store user preferences, window layouts, etc.
+# #---------------------------------------------------
+# *.uvoptx      # Project options file
+# *.uvgui* # GUI layout file (old format)
+# *.uvguix.* # GUI layout file (new format)
+# *.bak         # Generic backup files (may include Keil/CubeMX)
+
+# #---------------------------------------------------
+# # 3. STM32CubeMX Specific
+# #---------------------------------------------------
+# *.ioc-backup* # CubeMX project backup files
+# # Note: CubeMX project file (.ioc) itself should generally NOT be ignored.
+
+# #---------------------------------------------------
+# # 4. Common Build Output Directories
+# # These directories contain all generated output files
+# #---------------------------------------------------
+# /Objects/
+# /Listings/
+# /Output/
+# /build/
+# /Debug/
+# /Release/
+
+# #---------------------------------------------------
+# # 5. IDE/Editor Specific Files (VSCode/Generic)
+# #---------------------------------------------------
+# .vscode/            # VSCode settings folder
+# *.code-workspace    # VSCode workspace file
