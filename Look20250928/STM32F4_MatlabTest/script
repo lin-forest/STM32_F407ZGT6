@@ -1,0 +1,10 @@
+config load "C:\Users\86173\Desktop\ProjectRequirement\MCU_Now\Lin_STM32\STM32_F407ZGT6\Look20250928\STM32F4_MatlabTest\STM32F4_MatlabTest.ioc"
+project toolchain STM32CubeIDE
+
+SetStructure Advanced
+
+project setCustomFWPath "C:\Users\86173\STM32Cube\Repository\STM32Cube_FW_F4_V1.26.2"
+
+project generate 
+
+exit wait

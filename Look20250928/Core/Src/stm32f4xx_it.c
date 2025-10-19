@@ -55,6 +55,7 @@
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
+extern TIM_HandleTypeDef htim14;
 
 /* USER CODE BEGIN EV */
 
@@ -66,7 +67,7 @@
 /**
   * @brief This function handles Non maskable interrupt.
   */
-void NMI_Handler(void)
+__attribute__((weak)) void NMI_Handler (void)
 {
   /* USER CODE BEGIN NonMaskableInt_IRQn 0 */
 
@@ -81,7 +82,7 @@ void NMI_Handler(void)
 /**
   * @brief This function handles Hard fault interrupt.
   */
-void HardFault_Handler(void)
+__attribute__((weak)) void HardFault_Handler (void)
 {
   /* USER CODE BEGIN HardFault_IRQn 0 */
 
@@ -96,7 +97,7 @@ void HardFault_Handler(void)
 /**
   * @brief This function handles Memory management fault.
   */
-void MemManage_Handler(void)
+__attribute__((weak)) void MemManage_Handler (void)
 {
   /* USER CODE BEGIN MemoryManagement_IRQn 0 */
 
@@ -111,7 +112,7 @@ void MemManage_Handler(void)
 /**
   * @brief This function handles Pre-fetch fault, memory access fault.
   */
-void BusFault_Handler(void)
+__attribute__((weak)) void BusFault_Handler (void)
 {
   /* USER CODE BEGIN BusFault_IRQn 0 */
 
@@ -126,7 +127,7 @@ void BusFault_Handler(void)
 /**
   * @brief This function handles Undefined instruction or illegal state.
   */
-void UsageFault_Handler(void)
+__attribute__((weak)) void UsageFault_Handler (void)
 {
   /* USER CODE BEGIN UsageFault_IRQn 0 */
 
@@ -141,7 +142,7 @@ void UsageFault_Handler(void)
 /**
   * @brief This function handles System service call via SWI instruction.
   */
-void SVC_Handler(void)
+__attribute__((weak)) void SVC_Handler (void)
 {
   /* USER CODE BEGIN SVCall_IRQn 0 */
 
@@ -154,7 +155,7 @@ void SVC_Handler(void)
 /**
   * @brief This function handles Debug monitor.
   */
-void DebugMon_Handler(void)
+__attribute__((weak)) void DebugMon_Handler (void)
 {
   /* USER CODE BEGIN DebugMonitor_IRQn 0 */
 
@@ -167,7 +168,7 @@ void DebugMon_Handler(void)
 /**
   * @brief This function handles Pendable request for system service.
   */
-void PendSV_Handler(void)
+__attribute__((weak)) void PendSV_Handler (void)
 {
   /* USER CODE BEGIN PendSV_IRQn 0 */
 
@@ -180,12 +181,12 @@ void PendSV_Handler(void)
 /**
   * @brief This function handles System tick timer.
   */
-void SysTick_Handler(void)
+__attribute__((weak)) void SysTick_Handler (void)
 {
   /* USER CODE BEGIN SysTick_IRQn 0 */
 
   /* USER CODE END SysTick_IRQn 0 */
-  HAL_IncTick();
+
   /* USER CODE BEGIN SysTick_IRQn 1 */
 
   /* USER CODE END SysTick_IRQn 1 */
@@ -197,6 +198,72 @@ void SysTick_Handler(void)
 /* For the available peripheral interrupt handler names,                      */
 /* please refer to the startup file (startup_stm32f4xx.s).                    */
 /******************************************************************************/
+
+/**
+  * @brief This function handles DMA1 stream1 global interrupt.
+  */
+__attribute__((weak)) void DMA1_Stream1_IRQHandler (void)
+{
+  /* USER CODE BEGIN DMA1_Stream1_IRQn 0 */
+
+  /* USER CODE END DMA1_Stream1_IRQn 0 */
+  /* USER CODE BEGIN DMA1_Stream1_IRQn 1 */
+
+  /* USER CODE END DMA1_Stream1_IRQn 1 */
+}
+
+/**
+  * @brief This function handles DMA1 stream3 global interrupt.
+  */
+__attribute__((weak)) void DMA1_Stream3_IRQHandler (void)
+{
+  /* USER CODE BEGIN DMA1_Stream3_IRQn 0 */
+
+  /* USER CODE END DMA1_Stream3_IRQn 0 */
+  /* USER CODE BEGIN DMA1_Stream3_IRQn 1 */
+
+  /* USER CODE END DMA1_Stream3_IRQn 1 */
+}
+
+/**
+  * @brief This function handles TIM8 trigger and commutation interrupts and TIM14 global interrupt.
+  */
+__attribute__((weak)) void TIM8_TRG_COM_TIM14_IRQHandler (void)
+{
+  /* USER CODE BEGIN TIM8_TRG_COM_TIM14_IRQn 0 */
+
+  /* USER CODE END TIM8_TRG_COM_TIM14_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim14);
+  /* USER CODE BEGIN TIM8_TRG_COM_TIM14_IRQn 1 */
+
+  /* USER CODE END TIM8_TRG_COM_TIM14_IRQn 1 */
+}
+
+/**
+  * @brief This function handles DMA2 stream2 global interrupt.
+  */
+__attribute__((weak)) void DMA2_Stream2_IRQHandler (void)
+{
+  /* USER CODE BEGIN DMA2_Stream2_IRQn 0 */
+
+  /* USER CODE END DMA2_Stream2_IRQn 0 */
+  /* USER CODE BEGIN DMA2_Stream2_IRQn 1 */
+
+  /* USER CODE END DMA2_Stream2_IRQn 1 */
+}
+
+/**
+  * @brief This function handles DMA2 stream7 global interrupt.
+  */
+__attribute__((weak)) void DMA2_Stream7_IRQHandler (void)
+{
+  /* USER CODE BEGIN DMA2_Stream7_IRQn 0 */
+
+  /* USER CODE END DMA2_Stream7_IRQn 0 */
+  /* USER CODE BEGIN DMA2_Stream7_IRQn 1 */
+
+  /* USER CODE END DMA2_Stream7_IRQn 1 */
+}
 
 /* USER CODE BEGIN 1 */
 
